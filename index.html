@@ -1,1 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <style>
+        /* --- VARIÁVEIS DE CORES --- */
+        :root {
+            --primary: #2d6a4f; /* Verde Escuro */
+            --secondary: #52b788; /* Verde Claro */
+            --accent: #d8f3dc; /* Fundo Suave */
+            --dark: #1b4332; /* Texto Escuro */
+            --light: #f8f9fa; /* Fundo Claro */
+            --gray: #6c757d; /* Texto Secundário */
+        }
+
+        /* --- ESTILOS GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        /* --- CABEÇALHO E MENU --- */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* --- BANNER PRINCIPAL (HERO) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+        }
+
+        /* --- GRID DE CARDS (PRODUÇÃO) --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* --- DUAS COLUNAS (DESAFIOS) --- */
+        .columns-2 {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .alert-box {
+            background-color: #ffe3e3;
+            border-left: 5px solid #e63946;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* --- DESAFIO COMPLEMENTAR: QUIZ --- */
+        .quiz-container {
+            background: white;
+            max-width: 600px;
+            margin: 40px auto 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: var(--light);
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--secondary);
+            background: var(--accent);
+        }
+
+        .correct {
+            background-color: #d4edda !important;
+            border-color: #28a745 !important;
+            color: #155724;
+        }
+
+        .wrong {
+            background-color: #f8d7da !important;
+            border-color: #dc3545 !important;
+            color: #721c24;
+        }
+
+        /* --- FORMULÁRIO DE CONTATO --- */
+        form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: var(--dark);
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">AgroSustentável</div>
+            <button class="hamburger" id="hamburger">☰</button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#producao">Produção</a></li>
+                <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                <li><a href="#desafios">Desafios</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</h1>
+        <p>Como o agronegócio pode crescer economicamente sem comprometer os recursos naturais das futuras gerações?</p>
+        <a href="#producao" class="btn">Explorar Conteúdo</a>
+    </section>
+
+    <section id="producao">
+        <h2>Produção Agrícola & Economia</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">O agronegócio é um dos pilares da economia global, garantindo a segurança alimentar e gerando emprego, mas o crescimento precisa caminhar junto com a tecnologia.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Crescimento do Setor</h3>
+                <p>O aumento populacional exige maior eficiência produtiva por hectare, reduzindo a necessidade de expansão territorial.</p>
+            </div>
+            <div class="card">
+                <h3>Impacto Económico</h3>
+                <p>Responsável por uma grande fatia do PIB e das exportações, equilibrando a balança comercial de diversos países.</p>
+            </div>
+            <div class="card">
+                <h3>Uso Tecnológico</h3>
+                <p>A modernização de maquinários e a análise de dados transformaram o campo numa indústria de alta performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sustentabilidade" style="background-color: var(--accent); max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>Sustentabilidade no Campo</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Agricultura de Precisão</h3>
+                    <p>Uso de sensores e GPS para aplicar fertilizantes e água na quantidade exata, evitando qualquer tipo de desperdício.</p>
+                </div>
+                <div class="card">
+                    <h3>Energias Limpas</h3>
+                    <p>Implementação de painéis solares e biomassa nas propriedades para gerar energia autossuficiente e limpa.</p>
+                </div>
+                <div class="card">
+                    <h3>Drones e Monitoramento</h3>
+                    <p>Mapeamento aéreo detalhado que identifica pragas e falhas na plantação antes que se tornem grandes problemas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="desafios">
+        <h2>Desafios Ambientais</h2>
+        <div class="columns-2">
+            <div class="column">
+                <div class="alert-box">
+                    <strong>Desmatamento Crítico:</strong> A abertura ilegal de novas fronteiras agrícolas destrói ecossistemas e biodiversidade.
+                </div>
+                <div class="alert-box">
+                    <strong>Uso Ineficiente da Água:</strong> A irrigação mal planeada pode esgotar aquíferos e rios locais.
+                </div>
+                <div class="alert-box">
+                    <strong>Emissões de Carbono:</strong> Práticas tradicionais aumentam os gases estufa na atmosfera acelerando mudanças climáticas.
+                </div>
+            </div>
+            <div class="column">
+                <h3>Consequências Reais</h3>
+                <p>Se não mudarmos a forma de produzir hoje, a perda de solo fértil, a escassez hídrica extrema e as alterações no regime de chuvas vão inviabilizar a própria agricultura no futuro.</p>
+                <p>O equilíbrio não é apenas uma escolha ecológica, é uma necessidade de sobrevivência de mercado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" style="background-color: #e9ecef; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>Soluções e o Futuro: Teste os seus Conhecimentos</h2>
+            <p style="text-align: center;">A agricultura regenerativa reconstrói a matéria orgânica do solo e restaura a biodiversidade.</p>
+            
+            <div class="quiz-container">
+                <h3 id="quiz-question">Carregando pergunta...</h3>
+                <div id="quiz-options"></div>
+                <p id="quiz-feedback" style="margin-top: 15px; font-weight: bold; display: none;"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Faça a sua Parte</h2>
+        <p style="text-align: center;">Tem dúvidas ou ideias sobre projetos de sustentabilidade agrícola? Entre em contacto connosco.</p>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required placeholder="Seu nome completo">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" rows="5" required placeholder="Como podemos ajudar?"></textarea>
+            </div>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
+        <p>Construído para o futuro do nosso planeta.</p>
+    </footer>
+
+    <script>
+        // 1. MENU RESPONSIVO (HAMBÚRGUER)
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Fechar o menu ao clicar num link (útil para mobile)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 2. LÓGICA DO QUIZ INTERATIVO
+        const quizData = {
+            question: "Qual técnica agrícola integra árvores, pasto e cultivo numa mesma área de forma sustentável?",
+            options: [
+                "Monocultura intensiva tradicional",
+                "Integração Lavoura-Pecuária-Floresta (ILPF)",
+                "Cultivo convencional com queimadas"
+            ],
+            correct: 1, // Índice da resposta correta (ILPF)
+            explanation: "Parabéns! A ILPF ajuda no conforto térmico dos animais, recupera o solo e absorve carbono."
+        };
+
+        const questionEl = document.getElementById('quiz-question');
+        const optionsContainer = document.getElementById('quiz-options');
+        const feedbackEl = document.getElementById('quiz-feedback');
+
+        function loadQuiz() {
+            questionEl.innerText = quizData.question;
+            optionsContainer.innerHTML = "";
+            
+            quizData.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.classList.add('quiz-option');
+                button.innerText = option;
+                button.addEventListener('click', () => checkAnswer(index, button));
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedIndex, clickedButton) {
+            const allOptions = document.querySelectorAll('.quiz-option');
+            
+            // Desativar todos os botões após o clique
+            allOptions.forEach(btn => btn.disabled = true);
+
+            if (selectedIndex === quizData.correct) {
+                clickedButton.classList.add('correct');
+                feedbackEl.innerText = quizData.explanation;
+                feedbackEl.style.color = "#155724";
+            } else {
+                clickedButton.classList.add('wrong');
+                allOptions[quizData.correct].classList.add('correct'); // Mostra a correta
+                feedbackEl.innerText = "Resposta incorreta. A alternativa certa seria ILPF.";
+                feedbackEl.style.color = "#721c24";
+            }
+            feedbackEl.style.display = "block";
+        }
+
+        // Iniciar o quiz quando a página carregar
+        loadQuiz();
+
+        // 3. VALIDAÇÃO DE ENVIO DO FORMULÁRIO
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu contacto! O formulário foi validado e enviado com sucesso (Simulação).');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
 
