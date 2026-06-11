@@ -1,14 +1,12 @@
-/* --- VARIÁVEIS DE CORES --- */
 :root {
-    --primary: #2d6a4f; /* Verde Escuro */
-    --secondary: #52b788; /* Verde Claro */
-    --accent: #d8f3dc; /* Fundo Suave */
-    --dark: #1b4332; /* Texto Escuro */
-    --light: #f8f9fa; /* Fundo Claro */
-    --gray: #6c757d; /* Texto Secundário */
+    --primary: #2d6a4f;
+    --secondary: #52b788;
+    --accent: #d8f3dc;
+    --dark: #1b4332;
+    --light: #f8f9fa;
+    --gray: #6c757d;
 }
 
-/* --- ESTILOS GERAIS --- */
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +51,6 @@ p {
     color: #444;
 }
 
-/* --- CABEÇALHO E MENU --- */
 header {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -105,7 +102,6 @@ header {
     color: var(--primary);
 }
 
-/* --- BANNER PRINCIPAL (HERO) --- */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
     height: 100vh;
@@ -145,7 +141,6 @@ header {
     background-color: var(--primary);
 }
 
-/* --- GRID DE CARDS (PRODUÇÃO) --- */
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -166,7 +161,6 @@ header {
     color: var(--primary);
 }
 
-/* --- DUAS COLUNAS (DESAFIOS) --- */
 .columns-2 {
     display: flex;
     gap: 50px;
@@ -188,7 +182,6 @@ header {
     margin-bottom: 15px;
 }
 
-/* --- SEÇÕES COM FUNDOS COMPLETOS --- */
 .full-width-accent {
     background-color: var(--accent);
     max-width: 100%;
@@ -210,7 +203,6 @@ header {
     margin: 0 auto 30px;
 }
 
-/* --- DESAFIO COMPLEMENTAR: QUIZ --- */
 .quiz-container {
     background: white;
     max-width: 600px;
@@ -257,7 +249,6 @@ header {
     display: none;
 }
 
-/* --- FORMULÁRIO DE CONTATO --- */
 form {
     max-width: 600px;
     margin: 40px auto 0;
@@ -301,7 +292,6 @@ form button:hover {
     background-color: var(--dark);
 }
 
-/* --- RODAPÉ --- */
 footer {
     background-color: var(--dark);
     color: white;
@@ -310,7 +300,6 @@ footer {
     margin-top: 60px;
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
