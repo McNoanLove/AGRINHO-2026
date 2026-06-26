@@ -103,7 +103,7 @@ header {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/Gemini_Generated_Image_pc9p05pc9p05pc9p.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
