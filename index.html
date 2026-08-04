@@ -3,134 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte, Futuro Sustentável</title>
+    <title>AgroTech Sustentável | Inovação e Futuro no Campo</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Fonte Google Inter para tipografia moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">AgroSustentável</div>
-            <button class="hamburger" id="hamburger">☰</button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#inicio">Início</a></li>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Agro<span>Tech</span></a>
+            <ul class="nav-links">
                 <li><a href="#producao">Produção</a></li>
                 <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-                <li><a href="#desafios">Desafios</a></li>
+                <li><a href="#dados">Dados & Impacto</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
                 <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#contato" class="btn-nav">Contato</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Banner Principal (Hero) -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Tecnologia & Conscientização Ambiental</span>
+            <h1>O Futuro da Agricultura Inteligente e Sustentável</h1>
+            <p>Unindo agricultura de precisão, dados concretos e energias limpas para nutrir o planeta sem esgotar seus recursos.</p>
+            <div class="hero-buttons">
+                <a href="#calculadora" class="btn btn-primary">Calcular Impacto</a>
+                <a href="#dados" class="btn btn-secondary">Ver Estatísticas</a>
+            </div>
+        </div>
     </header>
 
-    <section id="inicio" class="hero">
-        <h1>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</h1>
-        <p>Como o agronegócio pode crescer economicamente sem comprometer os recursos naturais das futuras gerações?</p>
-        <a href="#producao" class="btn">Explorar Conteúdo</a>
-    </section>
-
-    <section id="producao">
-        <h2>Produção Agrícola & Economia</h2>
-        <p class="text-center-max">O agronegócio é um dos pilares da economia global, garantindo a segurança alimentar e gerando emprego, mas o crescimento precisa caminhar junto com a tecnologia.</p>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Crescimento do Setor</h3>
-                <p>O aumento populacional exige maior eficiência produtiva por hectare, reduzindo a necessidade de expansão territorial.</p>
-            </div>
-            <div class="card">
-                <h3>Impacto Económico</h3>
-                <p>Responsável por uma grande fatia do PIB e das exportações, equilibrando a balança comercial de diversos países.</p>
-            </div>
-            <div class="card">
-                <h3>Uso Tecnológico</h3>
-                <p>A modernização de maquinários e a análise de dados transformaram o campo numa indústria de alta performance.</p>
+    <!-- Métrica & Dados Estatísticos (Diferencial Técnico) -->
+    <section id="dados" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="30">0</h3>
+                    <span class="stat-unit">%</span>
+                    <p>Redução média no consumo de água com irrigação inteligente.</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="25">0</h3>
+                    <span class="stat-unit">%</span>
+                    <p>Aumento da produtividade por hectare via Agricultura de Precisão.</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="40">0</h3>
+                    <span class="stat-unit">%</span>
+                    <p>Economia no uso de fertilizantes químicos com monitoramento via sensores.</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="12">0</h3>
+                    <span class="stat-unit">Mi</span>
+                    <p>Toneladas de $CO_2$ evitadas ao ano com adoção do Plantio Direto no Brasil.</p>
+                </div>
             </div>
         </div>
     </section>
 
-     <section id="sustentabilidade" class="full-width-accent">
+    <!-- Seção 1: Produção Agrícola e Tecnologia -->
+    <section id="producao" class="section">
         <div class="container">
-            <h2>Sustentabilidade no Campo</h2>
-            
-            <div style="text-align: center; margin-bottom: 30px;">
-                <img src="assets/Gemini_Generated_Image_zdz09szdz09szdz0.png" alt="Tecnologia sustentável no campo" style="max-width: 100%; height: 350px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div class="section-header">
+                <h2>Produção Agrícola Conectada</h2>
+                <p>A transição do modelo tradicional para o ecossistema digital no campo.</p>
             </div>
+            <div class="grid-2">
+                <div class="content-block">
+                    <h3>IoT, Sensores e Decisões em Tempo Real</h3>
+                    <p>A produção moderna utiliza redes de sensores IoT (Internet das Coisas) solo-planta-atmosfera. Esses dispositivos medem a umidade do solo, evapotranspiração e condutividade elétrica a cada segundo.</p>
+                    <ul class="check-list">
+                        <li><strong>Drones & Imagens Espectrais:</strong> Identificação de estresse hídrico e pragas via índice NDVI antes de sintomas visíveis.</li>
+                        <li><strong>Maquinário Autônomo:</strong> Tratores guiados por GPS RTK com precisão milimétrica, evitando a compactação do solo.</li>
+                        <li><strong>Telemetria Agrícola:</strong> Rastreabilidade ponta a ponta desde o plantio até a mesa do consumidor.</li>
+                    </ul>
+                </div>
+                <div class="image-block">
+                    <img src="assets/agro-tech.jpg" alt="Drone e tecnologia aplicada no campo" class="featured-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Seção 2: Sustentabilidade & Práticas Técnicas -->
+    <section id="sustentabilidade" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Práticas Sustentáveis com Validação Técnica</h2>
+                <p>Como a ciência impulsiona a recuperação ambiental na lavoura.</p>
+            </div>
             <div class="grid-3">
                 <div class="card">
-                    <h3>Agricultura de Precisão</h3>
-                    <p>Uso de sensores e GPS para aplicar fertilizantes e água na quantidade exata, evitando qualquer tipo de desperdício.</p>
+                    <div class="card-icon">🌱</div>
+                    <h3>Systema ILPF</h3>
+                    <p>A Integração Lavoura-Pecuária-Floresta otimiza o uso da terra, reduz a erosão em até 80% e neutraliza emissões de metano entérico gado através do sequestro de carbono pelas árvores.</p>
                 </div>
                 <div class="card">
-                    <h3>Energias Limpas</h3>
-                    <p>Implementação de painéis solares e biomassa nas propriedades para gerar energia autossuficiente e limpa.</p>
+                    <div class="card-icon">⚡</div>
+                    <h3>Matriz Energética Limpa</h3>
+                    <p>Uso de resíduos orgânicos para geração de biogás via biodigestores e instalação de sistemas fotovoltaicos flutuantes em reservatórios de irrigação.</p>
                 </div>
                 <div class="card">
-                    <h3>Drones e Monitoramento</h3>
-                    <p>Mapeamento aéreo detalhado que identifica pragas e falhas na plantação antes que se tornem grandes problemas.</p>
+                    <div class="card-icon">💧</div>
+                    <h3>Manejamento Hídrico Eficiente</h3>
+                    <p>Substituição de pivôs convencionais por sistemas de gotejamento subsuperficial, reduzindo as perdas por evaporação em mais de 90%.</p>
                 </div>
             </div>
         </div>
     </section>
 
-<section id="desafios">
-        <h2>Desafios Ambientais</h2>
-        <div class="columns-2">
-            <div class="column">
-                <div class="alert-box">
-                    <strong>Desmatamento Crítico:</strong> A abertura ilegal de novas fronteiras agrícolas destrói ecossistemas e biodiversidade.
-                </div>
-                <div class="alert-box">
-                    <strong>Uso Ineficiente da Água:</strong> A irrigação mal planeada pode esgotar aquifers e rios locais.
-                </div>
-                <div class="alert-box">
-                    <strong>Emissões de Carbono:</strong> Práticas tradicionais aumentam os gases estufa na atmosfera acelerando mudanças climáticas.
-                </div>
-            </div>
-            <div class="column">
-                <h3>Consequências Reais</h3>
-                <p>Se não mudarmos a forma de produzir hoje, a perda de solo fértil, a escassez hídrica extrema e as alterações no regime de chuvas vão inviabilizar a própria agricultura no futuro.</p>
-                <p>O equilíbrio não é apenas uma escolha ecológica, é uma necessidade de sobrevivência de mercado.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="solucoes" class="full-width-gray">
+    <!-- Seção Interativa Exclusiva: Calculadora de Impacto Sustentável -->
+    <section id="calculadora" class="section calculator-section">
         <div class="container">
-            <h2>Soluções e o Futuro: Teste os seus Conhecimentos</h2>
-            <p style="text-align: center;">A agricultura regenerativa reconstrói a matéria orgânica do solo e restaura a biodiversidade.</p>
-            
-            <div class="quiz-container">
-                <h3 id="quiz-question">Carregando pergunta...</h3>
-                <div id="quiz-options"></div>
-                <p id="quiz-feedback" class="quiz-feedback-text"></p>
+            <div class="calculator-box">
+                <div class="calculator-header">
+                    <h2>Simulador de Impacto Sustentável</h2>
+                    <p>Insira a área da sua propriedade em hectares e descubra a estimativa de economia de recursos com a adoção de tecnologia AgroTech.</p>
+                </div>
+                <form id="calcForm" onsubmit="return false;">
+                    <div class="input-group">
+                        <label for="hectares">Tamanho da Propriedade (Hectares - ha):</label>
+                        <input type="number" id="hectares" placeholder="Ex: 50" min="1" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" onclick="calcularImpacto()">Calcular Economia Estimada</button>
+                </form>
+
+                <div id="resultBox" class="result-box hidden">
+                    <h3>Impacto Anual Estimado:</h3>
+                    <div class="results-grid">
+                        <div class="res-item">
+                            <span class="res-value" id="resAgua">0</span>
+                            <span class="res-label">Milhões de Litros de Água Salvos/ano</span>
+                        </div>
+                        <div class="res-item">
+                            <span class="res-value" id="resCarbono">0</span>
+                            <span class="res-label">Toneladas de $CO_2$ Evitadas/ano</span>
+                        </div>
+                        <div class="res-item">
+                            <span class="res-value" id="resAdubo">0</span>
+                            <span class="res-label">Kg de Insumos Otimizados/ano</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contato">
-        <h2>Faça a sua Parte</h2>
-        <p style="text-align: center;">Tem dúvidas ou ideias sobre projetos de sustentabilidade agrícola? Entre em contacto connosco.</p>
-        <form id="contact-form">
-            <div class="form-group">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" required placeholder="Seu nome completo">
+    <!-- Seção Soluções e Desafios -->
+    <section id="solucoes" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Desafios vs. Soluções Inovadoras</h2>
+                <p>Superando os gargalos para a consolidação da agricultura do futuro.</p>
             </div>
-            <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+            <div class="grid-2">
+                <div class="info-card challenge">
+                    <h3>⚠️ Desafios Atuais</h3>
+                    <ul>
+                        <li><strong>Conectividade Rural:</strong> Apenas 30% da área rural brasileira possui cobertura de internet móvel estável.</li>
+                        <li><strong>Custo de Implementação:</strong> Alto investimento inicial em tecnologia de ponta para pequenos produtores.</li>
+                        <li><strong>Mudanças Climáticas:</strong> Eventos extremos frequentes exigem sementes com maior tolerância biológica.</li>
+                    </ul>
+                </div>
+                <div class="info-card solution">
+                    <h3>✅ Soluções Aplicadas</h3>
+                    <ul>
+                        <li><strong>Redes Privadas 4G/5G Rurais:</strong> Parcerias de conectividade em banda larga dedicada.</li>
+                        <li><strong>Agtechs & Modelos As-a-Service:</strong> Democratização da tecnologia via aluguel e uso sob demanda de maquinários.</li>
+                        <li><strong>Bioinsumos & Biofábricas:</strong> Substituição de defensivos químicos por controle biológico de pragas.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="message">Mensagem:</label>
-                <textarea id="message" rows="5" required placeholder="Como podemos ajudar?"></textarea>
-            </div>
-            <button type="submit">Enviar Mensagem</button>
-        </form>
+        </div>
     </section>
 
+    <!-- Formulário de Contato -->
+    <section id="contato" class="section bg-light">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Quer levar inovação e sustentabilidade para a sua propriedade ou projeto escolar? Fale conosco!</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Sua Mensagem..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    <p id="formFeedback" class="feedback-msg"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
-        <p>Construído para o futuro do nosso planeta.</p>
+        <div class="container">
+            <p>&copy; 2026 AgroTech Sustentável — Projeto de Conscientização e Inovação Agrícola.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
