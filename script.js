@@ -1,70 +1,69 @@
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+document.addEventListener("DOMContentLoaded", () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let animated = false;
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+    function runCounters() {
+        const statsSection = document.getElementById('dados');
+        if (!statsSection) return;
 
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
+        const sectionPos = statsSection.getBoundingClientRect().top;
+        const screenPos = window.innerHeight / 1.3;
 
+        if (sectionPos < screenPos && !animated) {
+            statNumbers.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = target / 50; 
 
-const quizData = {
-    question: "Qual técnica agrícola integra árvores, pasto e cultivo numa mesma área de forma sustentável?",
-    options: [
-        "Monocultura intensiva tradicional",
-        "Integração Lavoura-Pecuária-Floresta (ILPF)",
-        "Cultivo convencional com queimadas"
-    ],
-    correct: 1,
-    explanation: "Parabéns! A ILPF ajuda no conforto térmico dos animais, recupera o solo e absorve carbono."
-};
-
-const questionEl = document.getElementById('quiz-question');
-const optionsContainer = document.getElementById('quiz-options');
-const feedbackEl = document.getElementById('quiz-feedback');
-
-function loadQuiz() {
-    questionEl.innerText = quizData.question;
-    optionsContainer.innerHTML = "";
-    
-    quizData.options.forEach((option, index) => {
-        const button = document.createElement('button');
-        button.classList.add('quiz-option');
-        button.innerText = option;
-        button.addEventListener('click', () => checkAnswer(index, button));
-        optionsContainer.appendChild(button);
-    });
-}
-
-function checkAnswer(selectedIndex, clickedButton) {
-    const allOptions = document.querySelectorAll('.quiz-option');
-    
-    allOptions.forEach(btn => btn.disabled = true);
-
-    if (selectedIndex === quizData.correct) {
-        clickedButton.classList.add('correct');
-        feedbackEl.innerText = quizData.explanation;
-        feedbackEl.style.color = "#155724";
-    } else {
-        clickedButton.classList.add('wrong');
-        allOptions[quizData.correct].classList.add('correct');
-        feedbackEl.innerText = "Resposta incorreta. A alternativa certa seria ILPF.";
-        feedbackEl.style.color = "#721c24";
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+            animated = true;
+        }
     }
-    feedbackEl.style.display = "block";
-}
 
-loadQuiz();
+    window.addEventListener('scroll', runCounters);
 
+    const contactForm = document.getElementById('contactForm');
+    const formFeedback = document.getElementById('formFeedback');
 
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    alert('Obrigado pelo seu contacto! O formulário foi enviado com sucesso.');
-    this.reset();
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formFeedback.style.color = "#2e7d32";
+            formFeedback.innerText = "✓ Mensagem enviada com sucesso! Obrigado pelo contato.";
+            contactForm.reset();
+        });
+    }
 });
+
+function calcularImpacto() {
+    const hectaresInput = document.getElementById('hectares');
+    const resultBox = document.getElementById('resultBox');
+
+    const hectares = parseFloat(hectaresInput.value);
+
+    if (isNaN(hectares) || hectares <= 0) {
+        alert("Por favor, insira um número válido de hectares.");
+        return;
+    }
+
+    const economiaAgua = (hectares * 0.45).toFixed(2);
+    const reducaoCarbono = (hectares * 1.2).toFixed(1);
+    const insumosOtimizados = Math.round(hectares * 35);
+
+    document.getElementById('resAgua').innerText = economiaAgua;
+    document.getElementById('resCarbono').innerText = reducaoCarbono;
+    document.getElementById('resAdubo').innerText = insumosOtimizados;
+
+    resultBox.classList.remove('hidden');
+}
 
